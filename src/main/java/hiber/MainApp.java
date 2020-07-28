@@ -33,18 +33,22 @@ public class MainApp {
          System.out.println("First Name = "+user.getFirstName());
          System.out.println("Last Name = "+user.getLastName());
          System.out.println("Email = "+user.getEmail());
+         //System.out.println("Car = "+user.);
          System.out.println();
       }
 
-
-
       //+----------------------------
-
       CarService carService = context.getBean(CarService.class);
       carService.add(new Car("audi", 123, user1));
       carService.add(new Car("bmw", 234, user2));
       carService.add(new Car("ford", 345, user3));
       carService.add(new Car("mustang", 456, user4));
+
+      User userGet = carService.getUserByNameSeries("bmw", 234);
+      System.out.println("Id = "+userGet.getId());
+      System.out.println("First Name = "+userGet.getFirstName());
+      System.out.println("Last Name = "+userGet.getLastName());
+      System.out.println("Email = "+userGet.getEmail());
 
       //+----------------------------
       context.close();

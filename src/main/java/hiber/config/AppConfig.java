@@ -43,10 +43,13 @@ public class AppConfig {
       Properties props=new Properties();
       props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
       props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+      //props.put("hibernate.hbm2ddl.jdbc_metadata_extraction_strategy", env.getProperty("hibernate.hbm2ddl.jdbc_metadata_extraction_strategy"));
+
+//hibernate.hbm2ddl.jdbc_metadata_extraction_strategy
 
       factoryBean.setHibernateProperties(props);
-      factoryBean.setAnnotatedClasses(User.class);
-      factoryBean.setAnnotatedClasses(Car.class);
+      factoryBean.setAnnotatedClasses(User.class, Car.class);
+      //factoryBean.setAnnotatedClasses(Car.class);
       return factoryBean;
    }
 
