@@ -44,12 +44,17 @@ public class MainApp {
       carService.add(new Car("ford", 345, user3));
       carService.add(new Car("mustang", 456, user4));
 
-      User userGet = carService.getUserByNameSeries("bmw", 234);
-      System.out.println("Id = "+userGet.getId());
-      System.out.println("First Name = "+userGet.getFirstName());
-      System.out.println("Last Name = "+userGet.getLastName());
-      System.out.println("Email = "+userGet.getEmail());
+      User userGet1 = carService.getUserByNameSeries("bmw", 234);
+      System.out.println("Id = "+userGet1.getId());
+      System.out.println("First Name = "+userGet1.getFirstName());
+      System.out.println("Last Name = "+userGet1.getLastName());
+      System.out.println("Email = "+userGet1.getEmail());
 
+      User userGet2 = carService.getUserByNameSeries("mustang", 456);
+      System.out.println("Id = "+userGet2.getId());
+      System.out.println("First Name = "+userGet2.getFirstName());
+      System.out.println("Last Name = "+userGet2.getLastName());
+      System.out.println("Email = "+userGet2.getEmail());
       //+----------------------------
       context.close();
    }

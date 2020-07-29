@@ -17,7 +17,7 @@ public class Car {
 
     @OneToOne//(fetch = FetchType.LAZY)
     @MapsId
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id", referencedColumnName = "id")
     private User user;
 
     public Car(String name, int series, User user) {
