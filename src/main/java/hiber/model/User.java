@@ -19,12 +19,18 @@ public class User {
    @Column(name = "email")
    private String email;
 
+   @OneToOne//(fetch = FetchType.LAZY)
+   @MapsId
+   @JoinColumn(name = "id", referencedColumnName = "id")
+   private Car cars;
+
    public User() {}
-   
-   public User(String firstName, String lastName, String email) {
+
+   public User(String firstName, String lastName, String email, Car cars) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.email = email;
+      this.cars = cars;
    }
 
    public Long getId() {
@@ -57,5 +63,13 @@ public class User {
 
    public void setEmail(String email) {
       this.email = email;
+   }
+
+   public Car getCars() {
+      return cars;
+   }
+
+   public void setCars(Car cars) {
+      this.cars = cars;
    }
 }

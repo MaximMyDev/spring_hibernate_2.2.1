@@ -15,23 +15,9 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-    @OneToOne//(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "id", referencedColumnName = "id")
-    private User user;
-
     public Car(String name, int series, User user) {
         this.name = name;
         this.series = series;
-        this.user = user;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public Car() {}
@@ -63,5 +49,10 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    @Override
+    public String toString() {
+        return "Car name=" + name + ", series=" + series;
     }
 }

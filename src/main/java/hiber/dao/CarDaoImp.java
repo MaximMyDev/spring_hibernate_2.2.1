@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -33,8 +34,24 @@ public class CarDaoImp implements CarDao {
 
     public User getUserByNameSeries(String name, int series) {
         User user = null;
-        Long carID = getCarByNameSeries(name, series);
-        return user = (User) sessionFactory.getCurrentSession().createQuery("FROM User where id = :getID").setParameter("getID", carID).getSingleResult();
+        //Long carID = getCarByNameSeries(name, series);
+        /*
+        System.out.println("-- find employees with tasks --");
+         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("example-unit");
+        EntityManager em = entityManagerFactory.createEntityManager();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<User> query = cb.createQuery(User.class);
+        Root<User> employee = query.from(User.class);
+        employee.join(user);
+        query.select(employee).distinct(true);
+        TypedQuery<User> typedQuery = em.createQuery(query);
+        typedQuery.getResultList().forEach(System.out::println);
+
+         */
+        //EntityManager entityManager;
+        //return entityManager.find(User.class, id);
+
+        return null;//user = (User) sessionFactory.getCurrentSession().createQuery("FROM User where id = :getID").setParameter("getID", carID).getSingleResult();
     }
 
 }
